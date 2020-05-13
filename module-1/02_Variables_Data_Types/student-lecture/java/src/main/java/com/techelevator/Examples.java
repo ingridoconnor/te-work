@@ -106,6 +106,16 @@ public class Examples {
 		System.out.println("Hello!\n\nGoodbye!");  // The escape character for newline is \n
 		
 		System.out.println("Hello\tGoodbye"); // The escape character for tab is \t
+	
+	
+	double money = .25 + .1 + .05 * 2;
+	System.out.println(money);
+	System.out.printf("%.2f\n ", money);
+	System.out.println(55);
+	System.out.printf("|%8.2f|\n", money);
+	System.out.printf("The amount of money is $%.2f\n", money);
+	System.out.printf("%20s money: $%.2f\n", "Mrs. Hilt", money);
+	System.out.printf("%f %8.2f %.3f", aDouble, money, money );
 	}
 
 }
