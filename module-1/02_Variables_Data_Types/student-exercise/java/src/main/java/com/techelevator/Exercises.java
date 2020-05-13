@@ -258,7 +258,8 @@ public class Exercises {
 		double moneyHiltHas = .50;
 		double costOfPencil = .07;
 		double amountThatCanBePurchased = moneyHiltHas / costOfPencil;
-		System.out.println(amountThatCanBePurchased);
+		String v = String.format("%.2f", amountThatCanBePurchased);
+		System.out.println(v);
 
         /*
         28. Mrs. Hilt saw 33 butterflies. Some of the butterflies were red and others
@@ -277,7 +278,8 @@ public class Exercises {
 		double moneyGiven = 1;
 		double costOfCandy = .54;
 		double katiesChange = moneyGiven - costOfCandy;
-		System.out.println(katiesChange);
+		String t = String.format("%.2f", katiesChange);
+		System.out.println(t);
 
         /*
         30. Mark has 13 trees in his backyard. If he plants 12 more, how many trees
