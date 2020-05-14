@@ -39,6 +39,16 @@ public class Lecture {
     public int returnLastElementOfParam(int[] passedInArray) {
         return 1;
     }
+    
+    public void arrayManipulation() {
+    	// declare an array that holds 5 integers
+    	
+    	// print out the first, third and last elements
+    	
+    	// add 6 to the third element and print out its new value
+    	
+    	// swap the values in the first and last positions
+    }
 
     /*
     6. Here, a variable is defined within a block. How can we get the value of that outside of the block in order to
