@@ -28,19 +28,20 @@ public class Examples {
 		System.out.println();
 
 		// when the ++ is used as a postfix operator the increment is performed after evalutation
+		// postfix means do it last
 		System.out.println("x = 1");
-		x = 1;
+		x = 1; // x holds the value of 1
 		System.out.println("y = x++");
-		y = x++;
+		y = x++; // set y = x (x), then it says increment x
 		System.out.println("x == " + x);
 		System.out.println("y == " + y);
 		System.out.println();
 
 		// when the ++ is used as a prefix operator the increment is performed before evalutation
 		System.out.println("x = 1");
-		x = 1;
+		x = 1; // x holds value of 1
 		System.out.println("y = ++x");
-		y = ++x;
+		y = ++x; // add 1 to x, now holds 2, then assign y to that value
 		System.out.println("y == " + y);
 		System.out.println("x == " + x);
 		System.out.println();
