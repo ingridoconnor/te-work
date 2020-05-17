@@ -7,7 +7,7 @@ public class Fibonacci {
 	public static void main(String[] args) {
 		
 	Scanner input = new Scanner(System.in);
-	input.close();
+	
 	System.out.println("Enter a number");
 	int endNum = Integer.parseInt(input.nextLine());
 	int previous = 0;
@@ -20,7 +20,7 @@ public class Fibonacci {
 		next = sum;
 		
 	}
-		
+	input.close();
 	}
 	
 }

@@ -7,8 +7,8 @@ public class DecimalToBinary {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		input.close();
-		System.out.println("Enter a series of decimal numbers seperated by spaces");
+		
+		System.out.println("Enter a series of decimal values seperated by spaces");
 		String decimalInput = input.nextLine();
 		String[] decimalInputArray = decimalInput.split(" ");
 		for (int i = 0; i < decimalInputArray.length; i++) {
@@ -18,7 +18,7 @@ public class DecimalToBinary {
 		//binaryNum = Integer.toBinaryString(i);
 		System.out.println("Binary is " + binaryNumString);
 		}
-	
+		input.close();
 
 }}
 
