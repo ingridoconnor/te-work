@@ -10,10 +10,15 @@ public class Exercises {
 	 firstLast6([13, 6, 1, 2, 3]) → false
 	 */
 	public boolean firstLast6(int[] nums) {
-		return nums[0] == 6 || nums[nums.length - 1] == 6;
+		if (nums[0] == 6 || nums[nums.length - 1] == 6);
+		return true; 
+		 
+	
+		
+		}
 		
 		
-	}
+	
 
 	/*
 	 2. Given an array of ints, return true if the array is length 1 or more, and the first element and
@@ -23,8 +28,8 @@ public class Exercises {
 	 sameFirstLast([1, 2, 1]) → true
 	 */
 	public boolean sameFirstLast(int[] nums) {
-		return (nums.length >= 1 && nums[0] ==  nums[nums.length-1]);
-		}
+		if (nums.length >= 1 && nums[0] ==  nums[nums.length-1]);
+		 return true; }
 	
 
 	/*
@@ -44,8 +49,8 @@ public class Exercises {
 	 commonEnd([1, 2, 3], [1, 3]) → true
 	 */
 	public boolean commonEnd(int[] a, int[] b) {
-		return (a[0] == b[0] || a[a.length - 1] == b[b.length - 1]);
-		
+		if (a[0] == b[0] || a[a.length - 1] == b[b.length - 1]);
+		return true;
 	}
 
 	/*
@@ -55,7 +60,8 @@ public class Exercises {
 	 sum3([7, 0, 0]) → 7
 	 */
 	public int sum3(int[] nums) {
-		return nums[0] + nums[1] + nums[2];
+		int sum3Array =  (nums[0] + nums[1] + nums[2]);
+		return sum3Array;
 	}
 
 	/*
