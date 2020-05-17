@@ -10,6 +10,8 @@ public class debugMe {
 	public static void main(String[] args) {
 			
 //		Hello User!
+		
+		
 		System.out.println(bannerMessage("Welcome!"));
 
 	}
@@ -17,7 +19,7 @@ public class debugMe {
 //	Accept a string and insert it in between to banner line
 	public static String bannerMessage(String message){
 		String banner = "************\n#\n************";
-		banner.replace("#",message);
+		banner = banner.replace("#",message);
 		return banner;
 	}
 
