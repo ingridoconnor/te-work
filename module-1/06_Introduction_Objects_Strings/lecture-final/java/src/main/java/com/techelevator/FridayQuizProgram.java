@@ -34,5 +34,15 @@ public class FridayQuizProgram {
 
 	System.out.println(sum);
 
+	
+	
+	String ans = "";
+	int num = 5;
+	while ( num  > 0 ) {
+		int rem = num % 2;
+		ans = rem + ans;
+		num /= 2;
+	}
+	System.out.println(ans);
 	}
 }
