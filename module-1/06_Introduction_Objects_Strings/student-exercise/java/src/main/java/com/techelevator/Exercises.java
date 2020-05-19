@@ -440,17 +440,17 @@ public class Exercises {
 	 */
 	
 	public String stringYak(String str) {
-		String myString = "";
+		String theString = "";
 		for (int i = 0; i < str.length();) {
 			if ( i <= str.length() - 3 &&((str.substring(i , i + 1)).equals ("y")) && (str.substring(i + 2, i + 3) .equals ('k'))) {
 				i = i + 2;}
 			else {
-				myString = myString + str.substring(i, i + 1);
+				theString = theString + str.substring(i, i + 1);
 			
 		
 		}
 		
-	}return myString;
+	}return theString;
 
 }
 	}
