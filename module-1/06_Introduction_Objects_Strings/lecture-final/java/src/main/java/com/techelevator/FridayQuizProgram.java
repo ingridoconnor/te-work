@@ -37,12 +37,13 @@ public class FridayQuizProgram {
 	
 	
 	String ans = "";
-	int num = 5;
-	while ( num  > 0 ) {
-		int rem = num % 2;
-		ans = rem + ans;
-		num /= 2;
+	int num = 6;
+	while (num > 0) {
+		int remainder = num % 2;
+		ans = remainder + ans;
+		num /= 2;	// altering list
 	}
+	
 	System.out.println(ans);
 	}
 }
