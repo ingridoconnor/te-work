@@ -380,12 +380,13 @@ public class Exercises {
 	 last2("axxxaaxx") → 2
 	 */
 	public int last2(String str) {
-		if (str.length() < 2) return 0;
+		if (str.length() < 2) 
+			return 0;
 		String lastTwo = str.substring(str.length() - 2);
 		int total = 0;
 		for (int i = 0; i < str.length() - 2; i++) {
-			String subString = str.substring(i, i + 2);
-			if(subString.equals(lastTwo)) {
+			String myString = str.substring(i, i + 2);
+			if(myString.equals(lastTwo)) {
 				total++;
 			}
 		}
@@ -400,16 +401,16 @@ public class Exercises {
 	 stringX("xabxxxcdx") → "xabcdx"
 	 */
 	public String stringX(String str) {
-		int strLength = str.length();
+		
 
-        if ( strLength < 3 )
+        if (str.length() < 3 )
         {
             return str;
         }
-        String subStr = str.substring( 1, strLength - 1 );
+        String subStr = str.substring( 1, str.length() - 1 );
         subStr = subStr.replace( "x", "" );
 
-        return str.charAt( 0 ) + subStr + str.charAt( strLength - 1 );
+        return str.charAt( 0 ) + subStr + str.charAt( str.length() - 1 );
     
 		
 	}
@@ -421,7 +422,7 @@ public class Exercises {
 	 altPairs("CodingHorror") → "Congrr"
 	 */
 	public String altPairs(String str) {
-		String myString = "";
+		String myString = ""; //string for output
 		for(int i = 0; i < str.length(); i += 4 ) {
 			myString = myString + str.charAt(i);
 			if (i + 1 < str.length()) {
