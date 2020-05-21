@@ -27,7 +27,7 @@ public class MapApplication {
 		System.out.println("Enter food you would like lb calorie amount for: ");
 		String foodInput = input.nextLine();
 		if(calPerLb.containsKey(foodInput)) {
-			System.out.println(foodInput+ " contains " + calPerLb.get(foodInput) + " calories ");
+			System.out.println(foodInput+ " contains " + calPerLb.get(foodInput) + " calories per lb ");
 		}else {
 			System.out.println("Food not in map , please make our system better, by entering number of calories: ");
 			String calorieInput = input.nextLine();
