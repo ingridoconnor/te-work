@@ -4,6 +4,8 @@ public class Product {
 	private String name;
 	private double price;
 	private double weightInOunces;
+	
+	
 	public String getName() {
 		return name;
 	}
