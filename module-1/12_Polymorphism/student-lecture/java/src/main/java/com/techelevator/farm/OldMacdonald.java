@@ -7,17 +7,26 @@ import java.util.List;
 public class OldMacdonald {
 	public static void main(String[] args) {
 
-		List<FarmAnimal> farmAnimals = new ArrayList<>(Arrays.asList(new Cow()));
+		List<Singable> singables = new ArrayList<>(Arrays.asList(new Cow(),
+				new Dog(), new Sheep(), new Donkey(), new Tractor()));
 
-		for (FarmAnimal animal : farmAnimals) {
-			String name = animal.getName();
-			String sound = animal.getSound();
+		for (Singable sing : singables) {
+			String name = sing.getName();
+			String soundOnce = sing.getSound();
+			String soundTwice = sing.getSoundTwice();
 			System.out.println("Old MacDonald had a farm, ee, ay, ee, ay, oh!");
 			System.out.println("And on his farm he had a " + name + ", ee, ay, ee, ay, oh!");
-			System.out.println("With a " + sound + " " + sound + " here");
-			System.out.println("And a " + sound + " " + sound +  " there");
-			System.out.println("Here a " + sound + " there a " + sound + " everywhere a " + sound + " " + sound);
+			System.out.println("With a " + soundTwice  + " here");
+			System.out.println("And a " + soundTwice  +  " there");
+			System.out.println("Here a " + soundOnce  + " there a " + soundOnce + " everywhere a " + soundTwice);
+			System.out.println("Old MacDonald had a farm, ee, ay, ee, ay, oh!");
 			System.out.println();
+		}
+		List<Sellable> sellables = new ArrayList<>(Arrays.asList(new Cow(), new Sheep(), new Donkey()));
+		
+		for(Sellable item: sellables) {
+			System.out.println("Item to be sold: " + item.getName());
+			System.out.println("Price of Item: " + item.getPrice().setScale(2));
 		}
 		
 	}
