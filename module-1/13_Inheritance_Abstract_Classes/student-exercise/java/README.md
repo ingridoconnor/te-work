@@ -33,7 +33,7 @@ If you open `PaintCalculator`, you'll see that some of the code has been comment
 
 ### Step One: Implement the `Wall` class
 
-The `Wall` class can't be instantiated. It has two instance variables, `name` and `color`, that are readonly. Add a constructor that looks like this:
+The `Wall` class can't be instantiated. It has two instance variables, `name` and `color`. Add a constructor that looks like this:
 
 ``` Java
 public Wall(String name, String color)
