@@ -20,7 +20,7 @@ public class Monopoly extends Game {
 	}
 
 	@Override
-	protected void setup(int numberOfPlayers) {
+	public void setup(int numberOfPlayers) {
 		System.out.println("Distribute money to each player");
 		for (int i = 0; i < numberOfPlayers && i < PIECES.length; i++) {
 			Player p = new Player(i + 1, PIECES[i]);
@@ -30,7 +30,7 @@ public class Monopoly extends Game {
 	}
 
 	@Override
-	protected void takeTurn(int player) {
+	public void takeTurn(int player) {
 		Player currentPlayer = players.get(player - 1);
 		if (!currentPlayer.isBankrupt()) {
 			System.out.println(currentPlayer.getPlayingPiece() + " is taking a turn.");
@@ -42,12 +42,12 @@ public class Monopoly extends Game {
 	}
 
 	@Override
-	protected boolean isGameOver() {
+	public boolean isGameOver() {
 		return getActivePlayers().size() == 1;
 	}
 
 	@Override
-	protected void finishGame() {
+	public void finishGame() {
 		Player winner = getActivePlayers().get(0);
 		System.out.println("* ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ ");
 		System.out.println(winner.getPlayingPiece() + " IS THE WINNER!!!");

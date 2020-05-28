@@ -11,6 +11,28 @@ public class OldMacdonald {
 	
 			List <FarmAnimal> animals = new ArrayList<>();	
 		// Load animals into the List randomly!
+			for(int i = 0; i < 8; i++) {
+				int random = (int)(Math.random() * 3);
+				//Math.random returns num bt 0. and 0.99
+				switch(random ) {
+				case 0:
+					animals.add(new Chicken());
+					animals.get(i).sleep(); //put the chick to sleep
+					break;
+				case 1:
+					animals.add(new Cow());
+					animals.get(i).sleep();
+					break;
+				
+				default:
+					animals.add(new Sheep());
+					animals.get(i).sleep();
+				}
+				}
+			Goat goat = new Goat();
+			goat.sleep();
+			animals.add(goat);
+			
 			
 
 		for (FarmAnimal sing : animals) {
