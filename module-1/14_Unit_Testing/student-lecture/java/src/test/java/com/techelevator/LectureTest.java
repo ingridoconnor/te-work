@@ -66,7 +66,7 @@ public class LectureTest {
 
 		String theString = "Java"; // Arrange
 		int length = theString.length(); // Act
-		Assert.assertEquals(4, length); // Assert
+		Assert.assertEquals(4, length); // Assert (expected res, actual res)
 	}
 
 	@Test
