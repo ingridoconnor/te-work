@@ -7,9 +7,10 @@ public class KataFizzBuzz {
 	public String fizzBuzz(int myInt) {
 		this.myInt = myInt;
 		if (myInt % 3 == 0) {
+			return "Fizz";
 			
-		}
-		return "Fizz";
+		}return "";
+		
 		
 		
 	}
