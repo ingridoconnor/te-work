@@ -8,8 +8,12 @@ public class KataFizzBuzz {
 		this.myInt = myInt;
 		if (myInt % 3 == 0) {
 			return "Fizz";
-			
-		}return "";
+				
+		}
+		if(myInt % 5 == 0) {
+			return "Buzz";
+		}
+		return "";
 		
 		
 		
