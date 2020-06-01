@@ -24,6 +24,10 @@ public class KataFizzBuzzTest {
 		assertEquals("FizzBuzz", kata.fizzBuzz(15));
 		
 	}
+	@Test
+	public void convert_num_bt_1_100_to_string() {
+		assertEquals("22", kata.fizzBuzz(22));
+	}
 
 
 }
