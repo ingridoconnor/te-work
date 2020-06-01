@@ -6,6 +6,9 @@ public class KataFizzBuzz {
 
 	public String fizzBuzz(Integer myInt) {
 		this.myInt = myInt;
+		if (myInt < 1 || myInt > 100) {
+			return "";
+		}
 		if(myInt % 3 == 0 && myInt % 5 == 0) {
 			return "FizzBuzz";
 		}
@@ -19,6 +22,7 @@ public class KataFizzBuzz {
 		if(myInt >= 1 && myInt <= 100) {
 			return myInt.toString();
 		}
+		
 		
 		return "";
 		

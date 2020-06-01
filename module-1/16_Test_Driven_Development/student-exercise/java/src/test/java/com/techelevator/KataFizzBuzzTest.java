@@ -28,6 +28,11 @@ public class KataFizzBuzzTest {
 	public void convert_num_bt_1_100_to_string() {
 		assertEquals("22", kata.fizzBuzz(22));
 	}
+	@Test
+	public void not_in_range_empty_string() {
+		assertEquals("", kata.fizzBuzz(0));
+		
+	}
 
 
 
