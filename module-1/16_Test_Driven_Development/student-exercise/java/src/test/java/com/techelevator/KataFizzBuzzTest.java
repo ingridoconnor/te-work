@@ -19,5 +19,11 @@ public class KataFizzBuzzTest {
 		assertEquals("Buzz", kata.fizzBuzz(5));
 		
 	}
+	@Test
+	public void if_num_div_5_3_return_fizzbuzz() {
+		assertEquals("FizzBuzz", kata.fizzBuzz(15));
+		
+	}
+
 
 }

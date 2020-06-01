@@ -13,6 +13,7 @@ public class KataFizzBuzz {
 		if(myInt % 5 == 0) {
 			return "Buzz";
 		}
+		
 		return "";
 		
 		
