@@ -49,6 +49,15 @@ public class KataPrimeFactorsTest {
 		assertEquals(primeFactorList, kata.factorize(7));
 		
 	}
+	@Test
+	public void accepts_8_returns_2_2_2() {
+		List<Integer> primeFactorList = new ArrayList<>();
+		primeFactorList.add(2);
+		primeFactorList.add(2);
+		primeFactorList.add(2);
+		assertEquals(primeFactorList, kata.factorize(8));
+		
+	}
 	
 
 
