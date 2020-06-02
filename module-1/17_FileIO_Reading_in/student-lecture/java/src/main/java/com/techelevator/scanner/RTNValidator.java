@@ -13,7 +13,7 @@ public class RTNValidator {
 		printApplicationBanner();
 		
 		File inputFile = getInputFileFromUser();
-		try(Scanner fileScanner = new Scanner(inputFile)) {
+		try(Scanner fileScanner = new Scanner(inputFile)) { //try with resources (resource) --auto close resource when done
 			while(fileScanner.hasNextLine()) {
 				String line = fileScanner.nextLine();
 				String rtn = line.substring(0, 9);

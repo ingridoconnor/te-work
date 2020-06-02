@@ -7,19 +7,30 @@ public class KataFizzBuzz {
 	public String fizzBuzz(Integer myInt) {
 		String number = Integer.toString(myInt);
 		this.myInt = myInt;
+		
+		
+		
 		if (myInt < 1 || myInt > 100) {
 			return "";
 		}
+		
+		
 		if(myInt % 3 == 0 && myInt % 5 == 0) {
 			return "FizzBuzz";
 		}
+		if(Integer.toString(myInt).contains("3") && (Integer.toString(myInt).contains("5"))) {
+			return "FizzBuzz";
+		}
+		
 		if(myInt % 5 == 0 || Integer.toString(myInt).contains("5")) {
 			return "Buzz";
 		}
+		
 		if (myInt % 3 == 0 || Integer.toString(myInt).contains("3") ) {
 			return "Fizz";
 				
 		}
+		
 		
 		if(myInt >= 1 && myInt <= 100) {
 			return myInt.toString();
