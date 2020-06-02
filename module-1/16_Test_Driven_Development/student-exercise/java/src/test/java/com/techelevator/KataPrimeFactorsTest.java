@@ -1,6 +1,6 @@
 package com.techelevator;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,10 +18,20 @@ public class KataPrimeFactorsTest {
 		assertEquals(primeFactorList, kata.factorize(1));
 		
 	}
+	
 	@Test
 	public void accepts_num_3() {
-		List<Integer> primeFactorList = new ArrayList<>(3);
+		List<Integer> primeFactorList = new ArrayList<>();
+		primeFactorList.add(3);
 		assertEquals(primeFactorList, kata.factorize(3));
+		
+	}
+	@Test
+	public void accepts_4_returns_2_2() {
+		List<Integer> primeFactorList = new ArrayList<>();
+		primeFactorList.add(2);
+		primeFactorList.add(2);
+		assertEquals(primeFactorList, kata.factorize(4));
 		
 	}
 	
