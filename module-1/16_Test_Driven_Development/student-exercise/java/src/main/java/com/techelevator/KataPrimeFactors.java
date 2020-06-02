@@ -9,7 +9,7 @@ public class KataPrimeFactors {
 		List<Integer> primeList = new ArrayList<>();
 		
 		if(num > 1) {
-			int i = 2; 
+ 			int i = 2; 
 			
 			while(i <= num) {
 				if(num % i == 0) {
@@ -21,7 +21,7 @@ public class KataPrimeFactors {
 				}
 			}
 		}
-		
+		 
 		
 		
 		
