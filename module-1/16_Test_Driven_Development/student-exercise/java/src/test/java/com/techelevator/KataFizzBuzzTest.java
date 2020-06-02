@@ -38,7 +38,7 @@ public class KataFizzBuzzTest {
 		assertEquals("Fizz", kata.fizzBuzz(13));
 	}
 	@Test
-	public void dic_by_5_of_contains_5() {
+	public void div_by_5_of_contains_5() {
 		assertEquals("Buzz", kata.fizzBuzz(51));
 	}
 
