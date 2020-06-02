@@ -1,10 +1,24 @@
 package com.techelevator;
 
-import org.junit.*;
+import static org.junit.Assert.assertEquals;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.FixMethodOrder;
+import org.junit.Test;
 import org.junit.runners.MethodSorters;
-import static org.junit.Assert.*;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class KataPrimeFactorsTest {
+	KataPrimeFactors kata = new KataPrimeFactors();
+	@Test
+	public void accepts_number_1() {
+		List<Integer> primeFactorList = new ArrayList<>();
+		assertEquals(primeFactorList, kata.factorize(1));
+		
+	}
+	
+
 
 }
