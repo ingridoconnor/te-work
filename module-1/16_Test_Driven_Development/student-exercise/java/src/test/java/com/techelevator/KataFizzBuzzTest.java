@@ -41,6 +41,11 @@ public class KataFizzBuzzTest {
 	public void div_by_5_of_contains_5() {
 		assertEquals("Buzz", kata.fizzBuzz(51));
 	}
+	@Test
+	public void div_by_3_5_or_contains_3_5() {
+		assertEquals("FizzBuzz", kata.fizzBuzz(53));
+	}
+	
 
 
 
