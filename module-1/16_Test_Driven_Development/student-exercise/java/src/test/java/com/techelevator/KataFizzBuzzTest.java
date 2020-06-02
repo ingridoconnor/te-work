@@ -33,6 +33,10 @@ public class KataFizzBuzzTest {
 		assertEquals("", kata.fizzBuzz(0));
 		
 	}
+	@Test
+	public void div_by_3_or_contains_3() {
+		assertEquals("Fizz", kata.fizzBuzz(3));
+	}
 
 
 
