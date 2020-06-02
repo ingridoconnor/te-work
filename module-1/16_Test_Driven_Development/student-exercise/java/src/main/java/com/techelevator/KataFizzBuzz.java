@@ -13,22 +13,18 @@ public class KataFizzBuzz {
 		if(myInt % 3 == 0 && myInt % 5 == 0) {
 			return "FizzBuzz";
 		}
-		if (myInt % 3 == 0) {
+		if (myInt % 3 == 0 || Integer.toString(myInt).contains("3") ) {
 			return "Fizz";
 				
 		}
-		if(myInt % 5 == 0) {
+		if(myInt % 5 == 0 || Integer.toString(myInt).contains("5")) {
 			return "Buzz";
 		}
 		if(myInt >= 1 && myInt <= 100) {
 			return myInt.toString();
 		}
-		if(myInt % 3 == 0 || myInt.toString(3).contains("3")) {
-			return "Fizz";	
-		}
-		if(myInt % 5 == 0 || myInt.toString(5).contains("5")) {
-			return "Buzz";
-		}
+		
+		
 		
 		
 		
