@@ -15,7 +15,7 @@ public class practicalApplications {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		
-		try (Logger log = new Logger("z:\\data\\log.txt");){
+		try (Logger log = new Logger("c:\\data\\log.txt");){
 		
 			System.out.println("Doing task 1");
 			log.Write("Opening Log Session");
