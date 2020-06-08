@@ -20,6 +20,7 @@ public class WordSearch {
 		
 		System.out.println("Should search be case sensitive (Y/N) ?");
 		String answer = userInput.nextLine(); //if answer n , ignore case
+	
 		
 		//counter for line num
 		int count = 1;
