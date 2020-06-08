@@ -1,9 +1,12 @@
 package com.techelevator;
 
+import java.time.LocalDate;
+
 public class CarClass {	
 private int year;
 private String make;
 private int carAge;
+private boolean isClassic;
 
 
 
@@ -11,7 +14,22 @@ private int carAge;
 public CarClass (int year, String make, boolean isClassic) {
 	this.year = year;
 	this.make = make;
-	isClassic = true;
+	this.isClassic = isClassic;
+	this.carAge = LocalDate.now().getYear() - year;
+}
+
+
+
+
+public boolean isClassic() {
+	return isClassic;
+}
+
+
+
+
+public void setClassic(boolean isClassic) {
+	this.isClassic = isClassic;
 }
 
 
@@ -57,9 +75,9 @@ public void setCarAge(int carAge) {
 }
 
 public boolean check (int yearToCheck) {
-	if(this.carAge < 4 || this.carAge > 25) {
+	if(this.carAge < 4 || this.carAge > 25 || isClassic) {
 		return false;
-	} if (this.yearToCheck(year)% 2 == 0 || this.yearToCheck(year) % 2 != 0){
+	} if (yearToCheck % 2 == 0 || yearToCheck % 2 != 0){
 		return true;
 	}else {
 		
@@ -68,15 +86,12 @@ public boolean check (int yearToCheck) {
 }
 @Override
 public String toString() {
-	return "CAR - {year} - {make}";
+	return "CAR - " + year +" - "+ make;
 	
 }
 
 
 
-private int yearToCheck(int year2) {
-	return 0;
-}
 
 
 }

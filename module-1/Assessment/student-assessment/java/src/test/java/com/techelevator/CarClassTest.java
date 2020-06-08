@@ -16,11 +16,11 @@ public class CarClassTest {
 	}
 	@Test
 	public void ytc_is__true() {
-		assertEquals(myTest.check(10), true);
+		assertTrue(myTest.check(10));
 	}
 	@Test
 	public void ytc_is_false() {
-		assertEquals(myTest.check(27), false);
+		assertFalse(myTest.check(2003));
 	}
 }
 	

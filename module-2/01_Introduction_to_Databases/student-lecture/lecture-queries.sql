@@ -1,33 +1,36 @@
 -- SELECT ... FROM
 -- Selecting the names for all countries
-
+SELECT name FROM country;
 
 -- Selecting the name and population of all countries
-
+SELECT name, population FROM country;
 
 -- Selecting all columns from the city table
-
+SELECT * FROM city;
 
 -- SELECT ... FROM ... WHERE
 -- Selecting the cities in Ohio
-
+SELECT * FROM city WHERE district = 'Ohio';
 
 -- Selecting countries that gained independence in the year 1776
-
+SELECT * FROM country WHERE indepyear = 1776;
+SELECT * FROM country WHERE indepyear BETWEEN 1875 AND 1914; 
 
 -- Selecting countries not in Asia
-
+SELECT * FROM country WHERE continent <> 'Asia';
 
 -- Selecting countries that do not have an independence year
+SELECT * FROM country WHERE indepyear IS NULL;
 
 -- Selecting countries that do have an independence year
-
+SELECT * FROM country WHERE indepyear IS NOT NULL;
 
 -- Selecting countries that have a population greater than 5 million
 
 
 
 -- SELECT ... FROM ... WHERE ... AND/OR
+SELECT name, continent, indepyear FROM country WHERE indepyear BETWEEN 1902 AND 1906 or continent = 'Oceania'; 
 -- Selecting cities in Ohio and Population greater than 400,000
 
 -- Selecting country names on the continent North America or South America
