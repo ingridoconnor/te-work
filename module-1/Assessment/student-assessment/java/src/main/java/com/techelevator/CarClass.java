@@ -15,7 +15,7 @@ public CarClass (int year, String make, boolean isClassic) {
 	this.year = year;
 	this.make = make;
 	this.isClassic = isClassic;
-	this.carAge = LocalDate.now().getYear() - year;
+	this.carAge = 2020 - year;
 }
 
 
@@ -64,7 +64,7 @@ public void setMake(String make) {
 
 
 public int getCarAge() {
-	return carAge;
+	return 2020 - year;
 }
 
 
@@ -75,18 +75,20 @@ public void setCarAge(int carAge) {
 }
 
 public boolean check (int yearToCheck) {
-	if(this.carAge < 4 || this.carAge > 25 || isClassic) {
+	if(getCarAge() < 4 || getCarAge() > 25 || isClassic) {
 		return false;
-	} if (yearToCheck % 2 == 0 || yearToCheck % 2 != 0){
+	} if (yearToCheck % 2 == 0 && getYear() % 2 == 0|| yearToCheck % 2 != 0 && getYear() % 2 != 0){
 		return true;
 	}else {
 		
 	}
 	return false;
 }
+
+
 @Override
 public String toString() {
-	return "CAR - " + year +" - "+ make;
+	return "CAR -" + getYear() + " - " + getMake();
 	
 }
 
