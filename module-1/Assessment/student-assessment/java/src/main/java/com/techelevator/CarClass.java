@@ -85,7 +85,6 @@ public boolean check (int yearToCheck) {
 	return false;
 }
 
-
 @Override
 public String toString() {
 	return "CAR -" + getYear() + " - " + getMake();

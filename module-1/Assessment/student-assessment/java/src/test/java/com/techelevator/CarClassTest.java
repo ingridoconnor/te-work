@@ -16,16 +16,16 @@ public class CarClassTest {
 	}
 	@Test
 	public void ytc_is__true() {
-		assertEquals(true, myTest.check(1925));
+		assertTrue(myTest.check(1925));
 	}
 	@Test
 	public void ytc_returns_false() {
-		assertEquals(false, myTest.check(2020));
+		assertFalse(myTest.check(2020));
 	}
-	@Test
-	public void to_string_test() {
-		assertEquals()
-	}
+//	@Test
+//	public void to_string_test() {
+//		assertEquals()
+//	}
 }
 	
 
