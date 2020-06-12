@@ -26,7 +26,8 @@ public class Module1CodingAssessment {
 //				isWhatever = true;
 //			}
 			CarClass car = new CarClass (Integer.parseInt(array[0]), array[1], Boolean.parseBoolean(array[2]));
-		    yearTotal += 2020 - Integer.parseInt(array[0]);
+		    list.add(car);
+			yearTotal += 2020 - Integer.parseInt(array[0]);
 		    System.out.println(car);
 		    
 		}

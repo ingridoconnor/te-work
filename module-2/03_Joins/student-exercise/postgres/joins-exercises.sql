@@ -103,27 +103,91 @@ FROM store
 
 -- 13. The first and last name of the top ten customers ranked by number of rentals 
 -- (#1 should be â€œELEANOR HUNTâ€? with 46 rentals, #10 should have 39 rentals)
-SELECT 
+SELECT c.first_name, c.last_name, COUNT(c.customer_id)
+FROM customer c
+        INNER JOIN payment p ON p.customer_id = c.customer_id
+ GROUP BY c.first_name, c.last_name
+ ORDER BY  COUNT(c.customer_id) DESC LIMIT 10;
 
 
 -- 14. The first and last name of the top ten customers ranked by dollars spent 
 -- (#1 should be â€œKARL SEALâ€? with 221.55 spent, #10 should be â€œANA BRADLEYâ€? with 174.66 spent)
+SELECT c.first_name, c.last_name, SUM(p.amount)
+FROM customer c
+        INNER JOIN payment p ON p.customer_id = c.customer_id
+GROUP BY c.first_name, c.last_name
+ORDER BY SUM(p.amount) DESC LIMIT 10;
 
 -- 15. The store ID, street address, total number of rentals, total amount of sales (i.e. payments), and average sale of each store.
 -- (NOTE: Keep in mind that an employee may work at multiple stores.)
 -- (Store 1 has 7928 total rentals and Store 2 has 8121 total rentals)
+SELECT s.store_id, a.address, SUM(p.amount), AVG(p.amount), COUNT(r.*)
+FROM store s
+        INNER JOIN address a ON a.address_id = s.address_id
+        INNER JOIN inventory i ON s.store_id = i.store_id
+        INNER JOIN rental r ON i.inventory_id = r.inventory_id
+        INNER JOIN payment p ON r.rental_id = p.rental_id
+GROUP BY s.store_id, a.address;
+
 
 -- 16. The top ten film titles by number of rentals
 -- (#1 should be â€œBUCKET BROTHERHOODâ€? with 34 rentals and #10 should have 31 rentals)
+SELECT f.title, COUNT(r.*)
+FROM film f
+        INNER JOIN inventory i ON i.film_id = f.film_id
+       INNER JOIN rental r ON r.inventory_id = i.inventory_id
+GROUP BY f.title
+ORDER BY COUNT(r.*) DESC LIMIT 10;
+        
+
 
 -- 17. The top five film categories by number of rentals 
 -- (#1 should be â€œSportsâ€? with 1179 rentals and #5 should be â€œFamilyâ€? with 1096 rentals)
+SELECT c.name, COUNT(r.*)
+FROM film f
+        INNER JOIN inventory i ON i.film_id = f.film_id
+        INNER JOIN rental r ON r.inventory_id = i.inventory_id
+        INNER JOIN film_category fc ON fc.film_id = f.film_id 
+        INNER JOIN category c ON c.category_id = fc.category_id
+GROUP BY c.name
+ORDER BY COUNT(r.*) DESC LIMIT 5;
+        
 
 -- 18. The top five Action film titles by number of rentals 
 -- (#1 should have 30 rentals and #5 should have 28 rentals)
+SELECT f.title, COUNT(r.*)
+FROM film f
+       INNER JOIN inventory i ON i.film_id = f.film_id
+       INNER JOIN rental r ON r.inventory_id = i.inventory_id
+       INNER JOIN film_category fc ON fc.film_id = f.film_id  
+       INNER JOIN category c ON c.category_id = fc.category_id
+WHERE c.name = 'Action'
+GROUP BY f.title
+ORDER BY COUNT(r.*) DESC LIMIT 5;
+       
+       
 
 -- 19. The top 10 actors ranked by number of rentals of films starring that actor 
 -- (#1 should be â€œGINA DEGENERESâ€? with 753 rentals and #10 should be â€œSEAN GUINESSâ€? with 599 rentals)
+SELECT a.first_name, a.last_name, COUNT(r.*)
+FROM actor a
+        INNER JOIN film_actor fa ON fa.actor_id = a.actor_id
+        INNER JOIN film f ON f.film_id = fa.film_id
+        INNER JOIN inventory i ON i.film_id = f.film_id
+        INNER JOIN rental r ON r.inventory_id = i.inventory_id
+GROUP BY a.actor_id, a.first_name, a.last_name
+ORDER BY COUNT(r.*) DESC LIMIT 10;
 
 -- 20. The top 5 â€œComedyâ€? actors ranked by number of rentals of films in the â€œComedyâ€? category starring that actor 
 -- (#1 should have 87 rentals and #5 should have 72 rentals)
+SELECT a.first_name, a.last_name, COUNT(r.*)
+FROM actor a
+        INNER JOIN film_actor fa ON fa.actor_id = a.actor_id
+        INNER JOIN film f ON f.film_id = fa.film_id
+        INNER JOIN inventory i ON i.film_id = f.film_id
+        INNER JOIN rental r ON r.inventory_id = i.inventory_id
+        INNER JOIN film_category fc ON fc.film_id = f.film_id
+        INNER JOIN category c ON c.category_id = fc.category_id
+WHERE c.name = 'Comedy'
+GROUP BY a.actor_id, a.first_name, a.last_name
+ORDER BY COUNT(r.*) DESC LIMIT 5;

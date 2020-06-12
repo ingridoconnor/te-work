@@ -1,12 +1,16 @@
 -- INSERT
 
 -- 1. Add Klingon as a spoken language in the USA
+SELECT * FROM country WHERE name LIKE '%ingd%';
 -- 2. Add Klingon as a spoken language in Great Britain
+INSERT INTO countrylanguage (language, countrycode, isofficial, percentage) VALUES ('Klingon', 'GBR', FALSE, .02);
 
 
 -- UPDATE
 
 -- 1. Update the capital of the USA to Houston
+
+INSERT INTO 
 -- 2. Update the capital of the USA to Washington DC and the head of state
 
 
@@ -35,10 +39,11 @@
 
 
 -- How to view all of the constraints
+SELECT * FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS;
+SELECT * FROM INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE;
+SELECT * FROM INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS;
 
-SELECT * FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS
-SELECT * FROM INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE
-SELECT * FROM INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS
+
 
 
 -- TRANSACTIONS
