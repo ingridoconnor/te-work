@@ -40,6 +40,11 @@ public class Exercises {
 	 array123([1, 1, 2, 1, 2, 3]) → true
 	 */
 	public boolean array123(int[] nums) {
+		for(int i = 0; i < nums.length - 2; i++) {
+			if(nums[i] == 1 && nums[i + 1] == 2 && nums[i + 2]== 3) {
+				return true;
+			}
+		}
 		
 		return false;
 	}
@@ -52,7 +57,13 @@ public class Exercises {
 	 noTriples([1, 1, 1, 2, 2, 2, 1]) → false
 	 */
 	public boolean noTriples(int[] nums) {
-		return false;
+		for(int i = 0; i < nums.length - 2; i++) {
+			int noTrip = nums[i];
+			if(nums[i + 1] == noTrip && nums[i + 2] == noTrip) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	/*
@@ -63,6 +74,7 @@ public class Exercises {
 	 makeEnds([7, 4, 6, 2]) → [7, 2]
 	 */
 	public int[] makeEnds(int[] nums) {
+		
 		return new int[] {};
 	}
 
@@ -73,6 +85,11 @@ public class Exercises {
 	 has23([4, 5]) → false
 	 */
 	public boolean has23(int[] nums) {
+		for(int i = 0; i < nums.length; i++) {
+			if(nums[i]==2 || nums[i]==3) {
+				return true;
+			}
+		}
 		return false;
 	}
 
@@ -83,6 +100,11 @@ public class Exercises {
 	 no23([3, 5]) → false
 	 */
 	public boolean no23(int[] nums) {
+		for(int i = 0; i < nums.length; i++) {
+			if(nums[0]!= 2 && nums[0] != 3 && nums[1] !=2 && nums[1] != 3) {
+				return true;
+			}
+		}
 		return false;
 	}
 
@@ -105,6 +127,7 @@ public class Exercises {
 	 double23([2, 3]) → false
 	 */
 	public boolean double23(int[] nums) {
+		
 		return false;
 	}
 
