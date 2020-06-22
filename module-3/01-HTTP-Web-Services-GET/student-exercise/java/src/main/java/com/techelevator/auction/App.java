@@ -58,15 +58,16 @@ public class App {
 
     public static Auction[] findAuctionsSearchPrice() {
     	System.out.println("Enter price of an item you would like to search: ");
-    	String currentBid = "";
-    	Auction[] array = null;
-    	currentBid = (scanner.nextLine()); 
+    	double currentBid = 0.00;
+    	//Auction[] array = null;
+    	 
     	try {
-    		array = restTemplate.getForObject(API_URL + "?currentBid_lte=" + currentBid, Auction[].class);
+    		currentBid = Double.parseDouble(scanner.nextLine());
+    		
     	} catch (NumberFormatException e) {
     		System.out.println("UH_OH STINKY.");
     	}
-        return array;
+        return restTemplate.getForObject(API_URL + "?currentBid_lte=" + currentBid, Auction[].class);
     }
 
     private static void run() {
