@@ -8,6 +8,9 @@ public class App {
 
   public static void main(String[] args) {
     run();
+    Scanner scanner = new Scanner(System.in);
+    printGreeting();
+    
   }
 
   private static void run() {

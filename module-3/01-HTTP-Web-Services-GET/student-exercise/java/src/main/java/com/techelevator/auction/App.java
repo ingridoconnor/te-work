@@ -24,23 +24,49 @@ public class App {
     }
 
     public static Auction[] listAllAuctions() {
-        // api code here
-        return null;
+        return restTemplate.getForObject(API_URL, Auction[].class);
+        
     }
 
     public static Auction listDetailsForAuction() {
-        // api code here
-        return null;
+    	
+    	System.out.println("Select an Auction (1-7), that you would like a description for: ");
+    	int id = 0;
+    	 try {
+             id = Integer.parseInt(scanner.nextLine());
+         } catch (NumberFormatException exception) {
+             System.out.println("Error parsing the input for menu selection.");
+         }
+        return restTemplate.getForObject(API_URL + "/" + id, Auction.class);
+        
     }
 
     public static Auction[] findAuctionsSearchTitle() {
-        // api code here
-        return null;
+    	System.out.println("Select an auction title to search for: ");
+    	String title = "";
+    	Auction[] array = null;
+    	title = scanner.nextLine();
+    	try {
+    		
+    		array = restTemplate.getForObject(API_URL + "?title_like=" + title, Auction[].class);
+    	} catch (HttpClientErrorException expection) {
+    		System.out.println("Error thrown :,(");
+    	}
+    	
+        return array;
     }
 
     public static Auction[] findAuctionsSearchPrice() {
-        // api code here
-        return null;
+    	System.out.println("Enter price of an item you would like to search: ");
+    	String currentBid = "";
+    	Auction[] array = null;
+    	currentBid = (scanner.nextLine()); 
+    	try {
+    		array = restTemplate.getForObject(API_URL + "?currentBid_lte=" + currentBid, Auction[].class);
+    	} catch (NumberFormatException e) {
+    		System.out.println("UH_OH STINKY.");
+    	}
+        return array;
     }
 
     private static void run() {
@@ -58,10 +84,13 @@ public class App {
             if (menuSelection == 1) {
                 printAuctions(listAllAuctions());
             } else if (menuSelection == 2) {
+            	
                 printAuction(listDetailsForAuction());
             } else if (menuSelection == 3) {
+            	
                 printAuctions(findAuctionsSearchTitle());
             } else if (menuSelection == 4) {
+            	
                 printAuctions(findAuctionsSearchPrice());
             } else if (menuSelection == 5) {
                 scanner.close();
