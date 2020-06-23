@@ -28,8 +28,23 @@ public class HotelService {
    * @return Reservation
    */
   public Reservation addReservation(String newReservation) {
-    // TODO: Implement method
-    return null;
+    Reservation res = makeReservation(newReservation);
+    if(res == null) {
+    	return null;
+    }
+    HttpHeaders headers = new HttpHeaders();
+    headers.setContentType(MediaType.APPLICATION_JSON);
+    HttpEntity<Reservation> entity = new HttpEntity<>(res, headers);
+    
+    try {
+    	res = restTemplate.postForObject(BASE_URL + "hotels/" + res.getHotelID() + "/reservations", entity, Reservation.class);
+    	
+    } catch (RestClientResponseException e) {
+    	console.printError(e.getRawStatusCode() + ": " + e.getStatusText());
+    }catch (ResourceAccessException e) {
+    	console.printError(e.getMessage());
+    }
+    return res;
   }
 
   /**
@@ -40,8 +55,25 @@ public class HotelService {
    * @return
    */
   public Reservation updateReservation(String CSV) {
-    // TODO: Implement method
-    return null;
+	  Reservation reservation = makeReservation (CSV);
+	  if (reservation == null) {
+	  return null;
+	  }
+
+
+	  HttpHeaders headers = new HttpHeaders();
+	  headers.setContentType(MediaType.APPLICATION_JSON);
+	  HttpEntity<Reservation> entity = new HttpEntity<>(reservation, headers);
+
+	  try {
+	      restTemplate.put(BASE_URL + "reservations/" + reservation.getId(), entity);
+	  } catch (RestClientResponseException e) {
+	      console.printError(e.getRawStatusCode()  + ": " + e.getStatusText());
+	  } catch (ResourceAccessException e) {
+	      console.printError(e.getMessage());
+	  }
+	  return reservation;
+    
   }
 
   /**
@@ -50,7 +82,14 @@ public class HotelService {
    * @param id
    */
   public void deleteReservation(int id) {
-    // TODO: Implement method
+    try {
+    	restTemplate.delete(BASE_URL + "reservations/" + id);
+    } catch (RestClientResponseException e) {
+	      console.printError(e.getRawStatusCode()  + ": " + e.getStatusText());
+	  } catch (ResourceAccessException e) {
+	      console.printError(e.getMessage());
+	  }
+    
   }
 
   /* DON'T MODIFY ANY METHODS BELOW */

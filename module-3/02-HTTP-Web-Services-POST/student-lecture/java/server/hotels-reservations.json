@@ -129,6 +129,14 @@
       "checkinDate": "08/08/2020",
       "checkoutDate": "08/10/2020",
       "guests": 4
+    },
+    {
+      "id": 552,
+      "hotelID": 2,
+      "fullName": "Ingrid O'Connor",
+      "checkinDate": "07/01/2020",
+      "checkoutDate": "07/02/2020",
+      "guests": 2
     }
   ]
 }
