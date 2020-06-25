@@ -88,6 +88,8 @@ public class MemoryAuctionDAO implements AuctionDAO {
 
         return result;
     }
+    
+    
 
     @Override
     public void delete(int id) throws AuctionNotFoundException {
@@ -166,5 +168,6 @@ public class MemoryAuctionDAO implements AuctionDAO {
     private int getMaxIdPlusOne() {
         return getMaxID() + 1;
     }
+    
 
 }

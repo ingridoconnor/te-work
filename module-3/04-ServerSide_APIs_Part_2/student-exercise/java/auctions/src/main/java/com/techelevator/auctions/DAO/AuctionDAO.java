@@ -5,6 +5,7 @@ import com.techelevator.auctions.model.Auction;
 
 import java.util.List;
 
+
 public interface AuctionDAO {
 
     List<Auction> list();

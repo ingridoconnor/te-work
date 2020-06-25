@@ -89,7 +89,7 @@ In `AuctionController.Java`, create a method named `delete()` that accepts an `i
 
 This method must also:
 
-* Call `dao.update()`, passing it the ID that was passed to the method. 
+* Call `dao.delete()`, passing it the ID that was passed to the method. 
 * Send a `204(No Content)` status code back to the client, as the method doesn’t return a value.
 * Respond to the client when an invalid auction ID is passed to it.
 

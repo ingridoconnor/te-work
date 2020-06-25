@@ -2,14 +2,19 @@ package com.techelevator.auctions.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.techelevator.auctions.DAO.AuctionDAO;
+import com.techelevator.auctions.DAO.MemoryAuctionDAO;
 import com.techelevator.auctions.exception.AuctionNotFoundException;
 import com.techelevator.auctions.model.Auction;
 
@@ -19,8 +24,8 @@ public class AuctionController {
 
     private AuctionDAO dao;
 
-    public AuctionController(AuctionDAO dao) {
-        this.dao = dao;
+    public AuctionController() {
+        this.dao = new MemoryAuctionDAO();
     }
 
     @RequestMapping( path = "", method = RequestMethod.GET)
@@ -35,16 +40,36 @@ public class AuctionController {
 
         return dao.list();
     }
-
+    
     @RequestMapping(path = "/{id}", method = RequestMethod.GET)
     public Auction get(@PathVariable int id) throws AuctionNotFoundException {
         return dao.get(id);
     }
-
-    @RequestMapping( path = "", method = RequestMethod.POST)
-    public Auction create(@RequestBody Auction auction) {
+    
+    @ResponseStatus(HttpStatus.CREATED)
+    @RequestMapping(path = "", method = RequestMethod.POST)
+    public Auction create(@Valid @RequestBody Auction auction) {
         return dao.create(auction);
+    }
+   
+    @ResponseStatus(code = HttpStatus.NO_CONTENT, reason= "Content not found")
+    @RequestMapping(path="/{id}", method = RequestMethod.DELETE)
+    public void delete(@PathVariable int id) throws AuctionNotFoundException {
+    	dao.delete(id);
+    	
+    	
+    }
+    @RequestMapping(path = "/{id}", method= RequestMethod.PUT)
+    public Auction update(@Valid @RequestBody Auction auction, @PathVariable int id) throws AuctionNotFoundException {
+    	return dao.update(auction, id);
+    }
+//    @ResponseStatus(code = HttpStatus.NO_CONTENT, reason= "Content not found")
+//    @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
+//    public void delete1(@PathVariable int id) throws AuctionNotFoundException {
+//    	dao.delete(id);
+//    }
+   
     }
 
 
-}
+
