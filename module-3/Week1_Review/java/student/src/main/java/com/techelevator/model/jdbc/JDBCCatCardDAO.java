@@ -1,5 +1,6 @@
 package com.techelevator.model.jdbc;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -20,7 +21,14 @@ public class JDBCCatCardDAO implements CatCardDAO {
 
 	@Override
 	public List<CatCard> list() {
-		return null;
+		List<CatCard> card = new ArrayList<>();
+		String sqlGetListOfCards = "SELECT * FROM catcards";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetListOfCards);
+		while(results.next()) {
+			CatCard cat = mapRowToCard(results);
+			card.add(cat);
+		}
+		return card;
 	}
 
 	@Override
@@ -42,6 +50,11 @@ public class JDBCCatCardDAO implements CatCardDAO {
 
 	@Override
 	public boolean save(CatCard card) {
+		String sql = "INSERT INTO catcards (img_url, fact, caption) VALUES (?, ?, ?) RETURNING id";
+		long id = jdbcTemplate.queryForObject(sql, Long.class, card.getImgUrl(), card.getCatFact(), card.getCaption());
+		if(id > 0) {
+			return true;
+		}
 		return false;
 	}
 
@@ -51,7 +64,10 @@ public class JDBCCatCardDAO implements CatCardDAO {
 	
 	private CatCard mapRowToCard(SqlRowSet rs) {
 		CatCard cc = new CatCard();
-
+		cc.setCatCardId(rs.getLong("id"));
+		cc.setImgUrl("img_url");
+		cc.setCaption("caption");
+		cc.setCatFact("fact");
 		return cc;
 	}
 
