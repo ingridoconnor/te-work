@@ -33,9 +33,11 @@ public class JDBCCatCardDAO implements CatCardDAO {
 
 	@Override
 	public CatCard get(long id) {
+		String sql = "SELECT * FROM catcards";
+		jdbcTemplate.queryForObject(sql, Long.class, id);
 		
 
-		return null;
+		return id;
 	}
 
 	@Override
@@ -57,8 +59,14 @@ public class JDBCCatCardDAO implements CatCardDAO {
 		}
 		return false;
 	}
-
+	
+	
 	private boolean exists(long id) {
+		String sql = "DELETE FROM catcards WHERE id = ?";
+		id = jdbcTemplate.update(sql, id);
+		if(id > 0) {
+			return true;
+		}
 		return false;
 	}
 	

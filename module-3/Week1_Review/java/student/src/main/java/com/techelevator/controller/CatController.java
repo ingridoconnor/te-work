@@ -4,9 +4,13 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.techelevator.model.CatCard;
 import com.techelevator.model.CatCardDAO;
@@ -14,7 +18,8 @@ import com.techelevator.model.CatFact;
 import com.techelevator.model.CatPic;
 import com.techelevator.services.CatFactService;
 import com.techelevator.services.CatPicService;
-
+@RestController
+@RequestMapping("/api/cards")
 public class CatController {
 
     private CatCardDAO catCardDao;
@@ -44,5 +49,15 @@ public class CatController {
     	catCardDao.save(catCard);
     	return catCard;
     	
+    }
+    @RequestMapping(path = "/{id}", method = RequestMethod.GET)
+    public CatCard getById(@Valid @RequestParam long id) {
+    	return catCardDao.get(id);
+    }
+    @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
+    public void deleteCard(@PathVariable long id) {
+    	if (catCardDao.get(id) != null) {
+    		catCardDao.delete(id);
+    	}
     }
 }
