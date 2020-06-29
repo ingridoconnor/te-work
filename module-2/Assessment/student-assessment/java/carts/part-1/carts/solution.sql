@@ -11,5 +11,9 @@ SELECT username, cookie_value FROM carts WHERE username IS NOT NULL ORDER BY cre
 SELECT added, COUNT(added) FROM items GROUP BY added ORDER BY added;
 
 -- Select the cart's username and created date and the item's name for all carts created in the month of Sept. 2019
-
+SELECT username, created
+FROM carts
+INNER JOIN items
+ON carts.id = items.id
+WHERE created <= '2019-09-30' AND created >= '2019-09-01';
 
