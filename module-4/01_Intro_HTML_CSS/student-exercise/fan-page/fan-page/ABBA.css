@@ -1,0 +1,98 @@
+body{
+    font-family: news 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   
+}
+h1{
+    color: rgb(231, 199, 14);
+    background-color: black;
+    padding: 25px;
+    font-size: 60px;
+    border-radius: 2px;
+    text-align: center;
+    margin: 0px;
+    font-weight: bolder;
+
+}
+hr{
+    color: rgb(231, 199, 14);
+    padding: 0px;
+    background-color: black;
+    border: 10px solid black;
+    margin: -1px;
+}
+p{
+    text-align: center;
+    color: rgb(231, 199, 14);
+    background-color: black;
+    padding: 30px;
+    margin: 0px;
+    font-weight: bold;
+    font-size: 25px;
+    
+}
+
+table{
+    table-layout: fixed;
+    width: 100px;
+    background-color:black;
+    text-align: right;
+    justify-content: right;
+    font-size: 15px;
+}
+
+h2{
+    text-align: left;
+    color: rgb(231, 199, 14);
+    background-color: black;
+    margin: 0px;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: normal;
+    padding-left: 12px;
+}
+h3{
+    text-align: right;
+    color: rgb(231, 199, 14);
+    background-color: black;
+    margin: 0px;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: normal;
+    padding-right: 12px;
+}
+img{
+    image-rendering: crisp-edges;
+    height: 150px;
+    width: 375px;
+    
+}
+main{
+    
+    color: rgb(231, 199, 14);
+    background-color: black;
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+    font-weight: normal;
+  
+    
+}
+th{
+    text-decoration: underline;
+}
+h4{
+    justify-content: right;
+    text-align: right;
+    font-size: 15px;
+    font-weight: bold;
+    
+}
+
+footer{
+    text-decoration: underline;
+    justify-content: right;
+    text-align: right;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+}

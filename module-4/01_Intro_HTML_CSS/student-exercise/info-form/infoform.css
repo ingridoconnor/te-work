@@ -1,0 +1,16 @@
+main{
+    background-color: rgb(248, 223, 232);
+    font-family: monospace;
+    border-radius: 10px;
+    border: 10px solid black; 
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 350px;
+}
+
+
+div{
+ 
+   margin-bottom: 10px;
+
+}

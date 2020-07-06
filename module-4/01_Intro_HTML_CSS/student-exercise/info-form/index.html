@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Form</title>
+    <link rel="stylesheet" href="infoform.css"/>
+</head>
+<body>
+    <main>
+        <form id="infoform" method="GET" action="api/info-form">
+        <h1>Info Form:</h1>
+        <div>
+            <label for="name">Name:</label>
+            <input id="name" type="text" name="name"/>
+        </div>
+      
+        <div>
+            <label for="email">Email:</label>
+            <input id="name" type="text" name="email"/>
+        </div>
+      
+        <div>
+            <label for="birthday">DOB:</label>
+            <input id="dateofbirth" type="date" name="birthday"/>
+        </div>
+      
+        <div>
+            <label for="favoritecolor">Fav Color:</label>
+            <input id="favecolor" type="color" name="favecolor"/>
+        </div>
+      
+        <div>
+            <label for="confirmcheckbox">Check Box If Data Is Correct:</label>
+            <input id="confirmcheckbox" type="checkbox" name="checkboxiftrue"/>
+        </div>
+        <div>
+            <label for="submit">CLICK HERE</label>
+            <input id="submit" type="submit"/>
+        </div>
+        </form>
+    </main>
+    
+</body>
+</html>

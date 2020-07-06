@@ -75,7 +75,8 @@ public class Exercises {
 	 */
 	public int[] makeEnds(int[] nums) {
 		
-		return new int[] {};
+		
+		return new int[] {nums[0], nums[nums.length - 1]};
 	}
 
 	/*
@@ -127,6 +128,10 @@ public class Exercises {
 	 double23([2, 3]) → false
 	 */
 	public boolean double23(int[] nums) {
+		for(int i = 0; i < nums.length; i++) {
+			if((nums.length != 0 && nums.length != 1))
+					return nums[0] == 2 && nums[1] == 2 || nums[0] == 3 && nums[1] == 3;
+		}
 		
 		return false;
 	}
