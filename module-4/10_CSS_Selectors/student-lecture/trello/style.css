@@ -1,0 +1,82 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+    font-size: 16px;
+}
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(to bottom, lavender, black);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+div.trello-list{
+    display: inline-block;
+    width: 300px;
+    background-color: aliceblue;
+    border-radius: 2px 3px;
+}
+div.trello-list h2{
+    margin: 2px;
+    font-size: 1em;
+    font-weight: bold;
+}
+div.trello_list ol{
+    padding: 2px;
+}
+body{
+    white-space: nowrap;
+}
+div.trello-list a{
+    display: block;
+    color: red;
+
+}
+div.trello-list a:hover{
+    color:pink;
+}
+div.trello-list li{
+    white-space: normal;
+}
+.labels span{
+    display: inline-block;
+    vertical-align: top;
+    width: 35px;
+    height: 9px;
+}
+.label.pathway{
+    background-color: plum;
+}
+.label.individual{
+    background-color: rosybrown;
+}
+.label.pair{
+    background-color: seagreen;
+}
+.label.general{
+    background-color: slateblue;
+}
+header{
+    position: fixed;
+    top: 0px;
+    height: 50px;
+}
+main{
+    margin: 50px;
+
+}
+body::-webkit-scrollbar{
+    width: 10px;
+}
+body::-webkit-scrollbar-track{
+    background-color: tomato;
+}
+body::-webkit-scrollbar-thumb{
+    color: violet;
+    border-radius: 10px;
+}
+body::-webkit-scrollbar-thumb::hover{
+    background: yellow;
+}
