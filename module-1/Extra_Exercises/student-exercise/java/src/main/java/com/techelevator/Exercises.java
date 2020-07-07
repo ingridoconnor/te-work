@@ -230,6 +230,7 @@ public class Exercises {
 	 only14([1, 1]) → true
 	 */
 	public boolean only14(int[] nums) {
+		for(int i = 0; )
 		return false;
 	}
 
@@ -295,7 +296,17 @@ public class Exercises {
 	 blackjack(19, 22) → 19
 	 */
 	public int blackjack(int a, int b) {
-		return 0;
+		if(a > 21 && b > 21) {
+			return 0;
+		}if(a > 21) {
+			return b;
+		}if(b > 21) {
+			return a;
+		}
+		if(21 - a < 21 - b) {
+			return a;
+		}return b;
+		
 	}
 
 	/*
@@ -306,7 +317,9 @@ public class Exercises {
 	 evenlySpaced(4, 6, 3) → false
 	 */
 	public boolean evenlySpaced(int a, int b, int c) {
+		
 		return false;
 	}
+	
 
 }

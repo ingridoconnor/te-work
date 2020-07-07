@@ -33,6 +33,10 @@ main{
   padding-left: 20px;
   padding-right: 20px;
 }
+img.banner{
+  width: 100%;
+  display: block;
+}
 aside li{
   list-style: none;
   text-align: center;
