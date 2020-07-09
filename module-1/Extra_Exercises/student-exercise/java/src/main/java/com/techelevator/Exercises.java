@@ -118,7 +118,10 @@ public class Exercises {
 	 makeLast([3]) → [0, 3]
 	 */
 	public int[] makeLast(int[] nums) {
-		return new int[] {};
+		
+			return new int[] {};
+		
+		
 	}
 
 	/*
@@ -230,7 +233,11 @@ public class Exercises {
 	 only14([1, 1]) → true
 	 */
 	public boolean only14(int[] nums) {
-		for(int i = 0; )
+		for(int i = 0; i < nums.length; i++) {
+			if(nums[i]==1 && nums[i]==4) {
+				return true;
+			}
+		}
 		return false;
 	}
 
@@ -241,6 +248,17 @@ public class Exercises {
 	 no14([2, 3, 4]) → true
 	 */
 	public boolean no14(int[] nums) {
+		for(int i = 0; i < nums.length; i++) {
+			if(nums[i]==1) {
+				return true;
+			}
+			if(nums[i]==4) {
+				return true;
+			}
+			if(nums[i]==4 && nums[i]==1) {
+				return false;
+			}
+		}
 		return false;
 	}
 
@@ -251,6 +269,11 @@ public class Exercises {
 	 has12([3, 1, 4, 5, 2]) → true
 	 */
 	public boolean has12(int[] nums) {
+		for(int i = 0; i < nums.length; i++) {
+			if(nums[i]==1 || nums[i]==2) {
+				return true;
+			}
+		}
 		return false;
 	}
 
@@ -273,6 +296,9 @@ public class Exercises {
 	 lessBy10(11, 1, 7) → true
 	 */
 	public boolean lessBy10(int a, int b, int c) {
+		if(a > 10 || b > 10 || c > 10) {
+			return true;
+		}
 		return false;
 	}
 
@@ -285,6 +311,13 @@ public class Exercises {
 	 greenTicket(1, 1, 2) → 10
 	 */
 	public int greenTicket(int a, int b, int c) {
+		if(a==b && b==c) {
+			return 20;
+		}if(a!=b && a!=c && b!=c) {
+			return 0;
+		}if(a==b || a==c || c==b) {
+			return 10;
+		}
 		return 0;
 	}
 
@@ -317,7 +350,9 @@ public class Exercises {
 	 evenlySpaced(4, 6, 3) → false
 	 */
 	public boolean evenlySpaced(int a, int b, int c) {
-		
+		if((a - b == c) ||(a + b ==c) || (b - a == c) || (b + a == c)) {
+			return true;
+		}
 		return false;
 	}
 	

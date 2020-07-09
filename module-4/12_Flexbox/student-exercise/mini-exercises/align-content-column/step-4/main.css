@@ -8,11 +8,16 @@ body {
 .container {
   background-color: #F0F0F0;
   height: 500px;
+  display: flex;
+  align-items: center;
+  align-items: flex-end;
+  align-items: flex-start;
+  justify-content: space-evenly;
 }
 
 .box {
   padding: 40px 55px;
   background-color: #00AFEF;
-  color: #fff;
+  color:black;
   border: solid 1px #777;
 }

@@ -6,6 +6,8 @@ body {
 header {
   background-color: #F0F0F0;
   padding: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .logo {
@@ -25,6 +27,11 @@ li {
   color: #707070;
   padding: 0 20px 0 0;
   margin-left: 20px;
+}
+nav {
+  flex-grow: 1;
+  align-items: center;
+  flex-direction: column;
 }
 
 a,
