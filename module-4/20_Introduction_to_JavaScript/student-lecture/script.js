@@ -10,8 +10,14 @@
  */
 function variables() {
   // Declares a variable where the value cannot be changed
+  const dayInWeek = 7;
+  console.log(dayInWeek);
   // Declares a variable those value can be changed
+  let dayInYear = 365;
+  console.log(dayInYear);
   // Declares a variable that will always be an array
+  const weekdays = ["mon", "tues", "weds", "thurs", "fri", "sat", "sun"];
+  console.table(weekdays);
 }
 
 /**
