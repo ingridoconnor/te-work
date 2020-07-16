@@ -14,6 +14,7 @@
 function iqTest(str){
     let numArray = str.split(" ");
     for(i = 0; i > str.length; i++)
+    if(i > 0 && numArray[i] % 2== numArray[i - 1] % 2==0)
 }
 
 /*
