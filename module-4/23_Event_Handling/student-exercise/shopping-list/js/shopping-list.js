@@ -36,6 +36,61 @@ function displayGroceries() {
     ul.appendChild(li);
   });
 }
+document.addEventListener('DOMContentLoaded', () => {
+  setPageTitle();
+  displayGroceries();
 
-setPageTitle();
-displayGroceries();
+ const tehe = document.querySelectorAll('ul li');
+ tehe.forEach((listItem) => {
+    listItem.addEventListener('click', (event) => {
+      markComplete(event.target);
+    });
+
+    listItem.addEventListener('dblclick', (event) => {
+      markIncomplete(event.target);
+    });
+ });
+
+ const clickThatButton = document.getElementById('toggleAll');
+ clickThatButton.addEventListener('click', (event) => {
+     markAllComplete(event.target);
+   });
+
+
+});
+function markComplete(checked){
+  if(!checked.classList.contains('completed')){
+    checked.classList.add('completed');
+    checked.querySelector('i').classList.add('completed');
+
+  }
+}
+
+function markIncomplete(unchecked){
+  if(unchecked.classList.contains('completed')){
+    unchecked.classList.remove('completed');
+    unchecked.querySelector('i').classList.remove('completed');
+  }
+}
+
+
+function markAllComplete(allComplete){
+  let done = document.querySelectorAll('ul li');
+  if(allItemsIncomplete){
+    done.forEach((listItem) => {
+      markComplete(listItem);
+    });
+    allItemsIncomplete = false;
+    allComplete.innerText = 'Mark All Incomplete';
+  } else{
+     
+      done.forEach((listItem) => {
+        markIncomplete(listItem);
+      });
+      allItemsIncomplete = true;
+      allComplete.innerText = 'Mark All Complete';
+
+    }
+  }
+
+
