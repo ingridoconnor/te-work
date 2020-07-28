@@ -15,7 +15,7 @@
       <tbody>
         <tr>
           <td>
-            <input type="checkbox" id="selectAll" v-on:click="select-all"/>
+            <input type="checkbox" id="selectAll" v-on:click="select-all" v-on:checked="selectedUserIDs()"/>
           </td>
           <td>
             <input type="text" id="firstNameFilter" v-model="filter.firstName" />
@@ -208,6 +208,9 @@ export default {
       this.selectedUserIDs.forEach((num) => {
           this.users.splice(this.users.findIndex((user) => user.id == num), 1);
       });
+    },
+    deselectAllUsers(){
+      this.selectedUserIDs = [];
     },
     selectAll(){
       this.selectedUserIDs = this.data.map((user) => user.id)
