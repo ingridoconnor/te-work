@@ -60,6 +60,33 @@ export default {
       });
     },
     saveNewBoard() {
+      this.isLoading =true;
+      boardService.addBoard(this.newBoard).then(response => {
+          if(response.status === 201){
+                this.retrieveBoards();
+                this.showAddBoard = false;
+                this.newBoard = {
+                  title = '',
+                  backgroundColor: this.randomBackgroundColor()
+                };
+          }
+      })
+      .catch(error => {
+            if (error.response) {
+              this.errorMsg =
+                "Error submitting new card. Response received was '" +
+                error.response.statusText +
+                "'.";
+            } else if (error.request) {
+              this.errorMsg =
+                "Error submitting new card. Server could not be reached.";
+            } else {
+              this.errorMsg =
+                "Error submitting new card. Request could not be created.";
+            }
+          });
+
+     
       
     },
     randomBackgroundColor() {

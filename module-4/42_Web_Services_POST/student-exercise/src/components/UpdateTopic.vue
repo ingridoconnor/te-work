@@ -24,7 +24,19 @@ export default {
   methods: {
     updateTopic() {
       const topic = { id: this.topicID, title: this.title };
-      // call topic service update method
+      topicService
+      .deleteTopic(this.topic.id)
+      .then(response => {
+        if(response.status === 200){
+          alert("Topic Deleted");
+          this.$router.push(`/topics/${this.topic.topicID}`);
+        }
+      })
+      .catch(error => {
+        if(error.response) {
+          this.erorMsg = "Error deleting topic";
+        }
+      });
     }
   },
   created() {

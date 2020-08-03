@@ -17,6 +17,7 @@ export default {
   name: "create-topic",
   data() {
     return {
+      isLoading: true,
       topic: {
         id: Math.floor(Math.random() * (1000 - 100) + 100),
         title: ""
@@ -24,7 +25,21 @@ export default {
     };
   },
   methods: {
-    saveTopic() {}
+    saveTopic() {
+      this.isLoading = true;
+      topicService.addTopic(this.topic).then(response => {
+        if(response.status === 201){
+          this.topic = {
+            id: Math.floor(Math.random() * (1000 - 100) + 100),
+        title: ""
+          }
+        }
+      }).catch(error => {
+        if(error.response) {
+          this.errorMsg = "error submitting topic" + error.response.statusText;
+        }
+      })
+    }
   }
 };
 </script>

@@ -1,10 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '../views/Home.vue'
+import Display from '../views/Display'
 import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
+
 
 Vue.use(Router)
 
@@ -26,8 +28,16 @@ const router = new Router({
       name: 'home',
       component: Home,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
+    },
+    {
+    path: "/display",
+    name: "display",
+    component: Display,
+    meta: {
+      requiresAuth: false
+    }
     },
     {
       path: "/login",
